@@ -29,14 +29,14 @@ class Autocomplete extends Component {
     this.clearInput = this.clearInput.bind(this);
   }
 
-  handleInputChange(text) {
+  handleInputChange = (text) => {
     const {onChangeText, minimumCharactersCount, waitInterval} = this.props;
     if (onChangeText) {
       onChangeText(text);
     }
     clearTimeout(this.timer);
     this.setState({inputValue: text});
-    if (text.length > minimumCharactersCount) {
+    if (text == null || text.length >= minimumCharactersCount) {
       this.setState(
         {
           loading: true,
