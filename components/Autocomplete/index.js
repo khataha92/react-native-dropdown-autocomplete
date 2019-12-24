@@ -195,6 +195,7 @@ class Autocomplete extends Component {
               if (scrollToInput) {
                 scrollToInput(findNodeHandle(event.target));
               }
+              this.handleInputChange("");
             }}
           />
           {loading && (
